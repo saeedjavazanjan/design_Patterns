@@ -1,4 +1,6 @@
 import builder.Hamberger
+import facade.User
+import facade.UserRepository
 import faktory.FoodClassCreator
 import faktory.Material
 
@@ -33,7 +35,7 @@ fun main(args: Array<String>) {
 */
 //foodCreator(Material.Vegtebels)
 
-    var hamberger=Hamberger.Builder()
+   /* var hamberger=Hamberger.Builder()
     hamberger.beef(true)
         .chesse(false)
         .onions(true)
@@ -42,7 +44,13 @@ fun main(args: Array<String>) {
 
     if (hamberger.cheese){
         println("cheesy hamberger")
-    }
+    }*/
+
+    val userRepository=UserRepository()
+    val user= User("SAEED")
+    userRepository.save(user)
+    val retriveduser=userRepository.findFirst()
+    println(retriveduser.login)
 
 }
 
