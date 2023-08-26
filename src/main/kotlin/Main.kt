@@ -1,3 +1,4 @@
+import builder.Hamberger
 import faktory.FoodClassCreator
 import faktory.Material
 
@@ -30,7 +31,18 @@ fun main(args: Array<String>) {
         println(any2)
     }.start()
 */
-foodCreator(Material.Hotdog)
+//foodCreator(Material.Vegtebels)
+
+    var hamberger=Hamberger.Builder()
+    hamberger.beef(true)
+        .chesse(false)
+        .onions(true)
+        .build()
+
+
+    if (hamberger.cheese){
+        println("cheesy hamberger")
+    }
 
 }
 
